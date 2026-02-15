@@ -8,7 +8,7 @@ const installShell = document.getElementById('install-shell');
 
 const installCommands = {
   linux: 'curl -fsSL https://dcr.dexoron.su/install.sh | bash',
-  windows: 'Временно не поддерживается',
+  windows: 'Temporarily not supported',
   macos: 'curl -fsSL https://dcr.dexoron.su/install.sh | bash',
 };
 
