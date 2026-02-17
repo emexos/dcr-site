@@ -81,20 +81,29 @@ mobileMenu?.querySelectorAll('a[href^="#"]').forEach((link) => {
 
 // New block: language switcher (bottom-right)
 const languageOptions = [
-  { key: 'ru', label: 'Русский', href: '/' },
-  { key: 'en', label: 'English', href: '/en/' },
-  { key: 'de', label: 'Deutsch', href: '/de/', disabled: true },
-  { key: 'pl', label: 'Polski', href: '/pl/', disabled: true },
+  { key: 'en', label: 'English', href: '/' },
+  { key: 'ru', label: 'Русский', href: '/ru/' },
 ];
 
 function detectCurrentLanguage() {
   const path = window.location.pathname;
+  const normalizedPath = path.endsWith('/') ? path : `${path}/`;
 
   for (const lang of languageOptions) {
     if (!lang.href) continue;
 
-    if (lang.href === '/' && path === '/') return lang.key;
-    if (lang.href !== '/' && (path === lang.href || path.startsWith(lang.href))) {
+    if (lang.href === '/' && (path === '/' || path === '/index.html')) return lang.key;
+
+    if (lang.href !== '/') {
+      const normalizedHref = lang.href.endsWith('/') ? lang.href : `${lang.href}/`;
+      if (normalizedPath === normalizedHref || normalizedPath.startsWith(normalizedHref)) {
+        return lang.key;
+      }
+    }
+  }
+
+  for (const lang of languageOptions) {
+    if (lang.href && path.startsWith(lang.href)) {
       return lang.key;
     }
   }
@@ -111,7 +120,6 @@ function createLanguageSwitcher() {
   const container = document.createElement('div');
   container.id = 'language-switcher';
 
-  // 💥 фикс позиционирования
   container.style.position = 'fixed';
   container.style.bottom = '1rem';
   container.style.right = '1rem';
@@ -160,7 +168,7 @@ function createLanguageSwitcher() {
 
 function closeMenu() {
   menu.classList.add('hidden');
-  toggleButton.classList.remove('hidden'); // 👈 вернуть кнопку
+  toggleButton.classList.remove('hidden');
   isOpen = false;
 }
 
@@ -169,7 +177,7 @@ function toggleMenu() {
     closeMenu();
   } else {
     menu.classList.remove('hidden');
-    toggleButton.classList.add('hidden'); // 👈 скрыть кнопку
+    toggleButton.classList.add('hidden');
     isOpen = true;
   }
 }

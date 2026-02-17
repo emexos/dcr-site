@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DCR</title>
-    <meta name="description" content="DCR is a Cargo-style tool for C/C++ projects. Rust implementation, cross-platform support, and self-update via GitHub Releases.">
+    <meta name="description" content="DCR — утилита для управления C/C++ проектами в стиле Cargo. Реализация на Rust, кроссплатформенность и обновление через GitHub Releases.">
     <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png">
@@ -18,10 +18,10 @@
         <div class="flex flex-row max-w-[1024px] mx-auto w-full justify-between text-center gap-2 py-1 sm:py-5 px-2">
             <a href="#" class="text-xl font-bold my-auto">DCR</a>
             <div class="sm:flex flex-row gap-4 hidden">
-                <a href="#info" class="hover:text-blue-500">Information</a>
-                <a href="#install" class="hover:text-blue-500">Installation</a>
-                <a href="#commands" class="hover:text-blue-500">Commands</a>
-                <a href="#example" class="hover:text-blue-500">Examples</a>
+                <a href="#info" class="hover:text-blue-500">Информация</a>
+                <a href="#install" class="hover:text-blue-500">Установка</a>
+                <a href="#commands" class="hover:text-blue-500">Команды</a>
+                <a href="#example" class="hover:text-blue-500">Примеры</a>
             </div>
             <div id="mobile-header-trigger" class="flex flex-col sm:hidden">
                 <button id="mobile-header-open" class="p-1">
@@ -43,10 +43,10 @@
                 </svg>
             </button>
         </div>
-        <a href="#info" class="hover:text-blue-500 w-full p-4 border-y border-slate-800 text-2xl">Information</a>
-        <a href="#install" class="hover:text-blue-500 w-full p-4 border-y border-slate-800 text-2xl">Installation</a>
-        <a href="#commands" class="hover:text-blue-500 w-full p-4 border-y border-slate-800 text-2xl">Commands</a>
-        <a href="#example" class="hover:text-blue-500 w-full p-4 border-y border-slate-800 text-2xl">Examples</a>
+        <a href="#info" class="hover:text-blue-500 w-full p-4 border-y border-slate-800 text-2xl">Информация</a>
+        <a href="#install" class="hover:text-blue-500 w-full p-4 border-y border-slate-800 text-2xl">Установка</a>
+        <a href="#commands" class="hover:text-blue-500 w-full p-4 border-y border-slate-800 text-2xl">Команды</a>
+        <a href="#example" class="hover:text-blue-500 w-full p-4 border-y border-slate-800 text-2xl">Примеры</a>
     </div>
     <main class="flex-1 flex flex-col w-full pt-16 ">
         <div class="flex flex-col w-full">
@@ -54,36 +54,36 @@
                 <span class="text-blue-500 font-bold">Open-Source Project</span>
                 <h1 class="text-5xl font-bold">DCR - Dexoron Cargo Realization</h1>
                 <p class="text-white/50">
-                    DCR is a Cargo-style utility for C/C++ projects. The current implementation is written in Rust, supports Linux, macOS, and Windows, and uses a single configuration file: dcr.toml.
+                    DCR — утилита для управления C/C++ проектами в стиле Cargo. Текущая версия написана на Rust, поддерживает Linux, macOS и Windows, и использует один конфигурационный файл: dcr.toml.
                 </p>
                 <div class="flex flex-row gap-4">
                     <a href="https://github.com/dexoron/dcr" class="px-6 py-2 bg-blue-500 text-black text-xl font-semibold rounded-lg hover:bg-blue-600">GitHub</a>
-                    <a href="https://github.com/dexoron/dcr/blob/master/README.md" class="px-6 py-2 rounded-lg border border-slate-900 text-xl font-semibold hover:border-blue-500 hover:text-blue-500">Documentation</a>
+                    <a href="https://github.com/dexoron/dcr/blob/master/README.md" class="px-6 py-2 rounded-lg border border-slate-900 text-xl font-semibold hover:border-blue-500 hover:text-blue-500">Документация</a>
                 </div>
             </div>
 
             <div id="info" class="py-16 px-2 flex sm:flex-row flex-col gap-4 justify-between max-w-[1024px] w-full mx-auto">
                 <div class="flex flex-col gap-2">
-                    <h2 class="text-2xl font-semibold">Why</h2>
+                    <h2 class="text-2xl font-semibold">Зачем</h2>
                     <ul class="list-disc list-inside">
-                        <li>Unified project structure</li>
-                        <li>Simple management commands</li>
-                        <li>Easy setup and usage</li>
+                        <li>Единая структура проекта</li>
+                        <li>Простые команды для управления</li>
+                        <li>Легкость настройки и использования</li>
                     </ul>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <h2 class="text-2xl font-semibold">Features</h2>
+                    <h2 class="text-2xl font-semibold">Возможности</h2>
                     <ul class="list-disc list-inside">
-                        <li>Project creation / initialization</li>
-                        <li>Build and run in debug/release profiles</li>
-                        <li>Binary self-update via dcr --update</li>
+                        <li>Создание/Инициализация проекта</li>
+                        <li>Сборка и запуск в профилях debug/release</li>
+                        <li>Обновление бинарника через dcr --update</li>
                     </ul>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <h2 class="text-2xl font-semibold">Platforms</h2>
+                    <h2 class="text-2xl font-semibold">Платформы</h2>
                     <ul class="list-disc list-inside">
                         <li>Linux (x86_64)</li>
-                        <li>macOS (Intel and Apple Silicon)</li>
+                        <li>macOS (Intel и Apple Silicon)</li>
                         <li>Windows (x86_64)</li>
                     </ul>
                 </div>
@@ -92,8 +92,8 @@
 
         <div id="install" class="bg-slate-900 flex flex-col w-full">
             <div class="py-16 px-2 max-w-[1024px] w-full mx-auto flex flex-col gap-4">
-                <h2 class="text-2xl font-semibold">Installation</h2>
-                <p>To install DCR, use your system terminal:</p>
+                <h2 class="text-2xl font-semibold">Установка</h2>
+                <p>Для установки DCR используйте терминал системы:</p>
 
                 <div class="flex flex-col w-full">
                     <div class="flex flex-row gap-4">
@@ -107,7 +107,7 @@
                     </div>
                 </div>
 
-                <p>If the installation was successful, run the following command to test:</p>
+                <p>Если все прошло успешно, пропишите следующую команду для теста:</p>
                 <pre class="bg-slate-950 p-4 rounded-lg whitespace-pre-line">
                     dcr --version
                 </pre>
@@ -116,52 +116,52 @@
 
         <div id="commands" class="flex flex-col w-full">
             <div class="py-16 px-2 max-w-[1024px] w-full mx-auto flex flex-col gap-4">
-                <h2 class="text-2xl font-semibold">Commands</h2>
-                <p>Below are the basic commands. All available commands can be found in the documentation.</p>
+                <h2 class="text-2xl font-semibold">Команды</h2>
+                <p>Ниже перечислены базовые команды, все команды можно найти в документации</p>
 
                 <table class="border-collapse border bg-slate-900 border-slate-800">
                     <thead class="bg-slate-800">
                         <tr>
-                            <th class="p-2">Command</th>
-                            <th class="p-2">Usage</th>
-                            <th class="p-2">Description</th>
+                            <th class="p-2">Команда</th>
+                            <th class="p-2">Использование</th>
+                            <th class="p-2">Описание</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td class="border border-slate-800 p-2">dcr</td>
                             <td class="border border-slate-800 p-2">dcr</td>
-                            <td class="border border-slate-800 p-2">Show help information</td>
+                            <td class="border border-slate-800 p-2">Показать справочную информацию</td>
                         </tr>
                         <tr>
                             <td class="border border-slate-800 p-2">dcr new</td>
                             <td class="border border-slate-800 p-2">dcr new hello</td>
-                            <td class="border border-slate-800 p-2">Creates a project named hello in the current directory</td>
+                            <td class="border border-slate-800 p-2">Создает проект в текущей директории с именем hello</td>
                         </tr>
                         <tr>
                             <td class="border border-slate-800 p-2">dcr init</td>
                             <td class="border border-slate-800 p-2">dcr init</td>
-                            <td class="border border-slate-800 p-2">Creates a project in the current directory using the directory name</td>
+                            <td class="border border-slate-800 p-2">Создает проект в текущей директории. Имя проекта будет равно имени директории</td>
                         </tr>
                         <tr>
                             <td class="border border-slate-800 p-2">dcr build</td>
                             <td class="border border-slate-800 p-2">dcr build --release</td>
-                            <td class="border border-slate-800 p-2">Builds the project. If no profile is specified, --debug is used.</td>
+                            <td class="border border-slate-800 p-2">Собирает проект. Если профиль не указан, используется --debug.</td>
                         </tr>
                         <tr>
                             <td class="border border-slate-800 p-2">dcr run</td>
                             <td class="border border-slate-800 p-2">dcr run --release</td>
-                            <td class="border border-slate-800 p-2">Builds and runs the binary. If no profile is specified, --debug is used.</td>
+                            <td class="border border-slate-800 p-2">Собирает проект и запускает бинарник. Если профиль не указан, используется --debug.</td>
                         </tr>
                         <tr>
                             <td class="border border-slate-800 p-2">dcr clean</td>
                             <td class="border border-slate-800 p-2">dcr clean --release</td>
-                            <td class="border border-slate-800 p-2">Removes a build profile from target. If no profile is specified, removes the entire folder.</td>
+                            <td class="border border-slate-800 p-2">Удаляет профиль из target. Если не указан профиль, удаляется вся папка</td>
                         </tr>
                         <tr>
                             <td class="border border-slate-800 p-2">dcr --update</td>
                             <td class="border border-slate-800 p-2">dcr --update</td>
-                            <td class="border border-slate-800 p-2">Updates DCR to the latest version from GitHub Releases.</td>
+                            <td class="border border-slate-800 p-2">Обновляет DCR до последней версии из GitHub Releases</td>
                         </tr>
                     </tbody>
                 </table>
@@ -170,16 +170,16 @@
 
         <div id="example" class="bg-slate-900 flex flex-col w-full">
             <div class="py-16 px-2 max-w-[1024px] w-full mx-auto flex flex-col gap-4">
-                <h2 class="text-2xl font-semibold">Example</h2>
-                <p>This section shows an example of using DCR.</p>
+                <h2 class="text-2xl font-semibold">Пример</h2>
+                <p>Здесь показан пример использования DCR</p>
 
                 <div class="flex flex-col gap-2">
-                    <h3 class="text-xl font-semibold">1. Creating a project</h3>
-                    <p>We will create a project named hello.</p>
+                    <h3 class="text-xl font-semibold">1. Создание проекта</h3>
+                    <p>Мы создадим проект с именем hello</p>
                     <pre class="bg-slate-950 p-4 rounded-lg whitespace-pre-line">
                         dcr new hello
                     </pre>
-                    <p>The resulting structure will look like this:</p>
+                    <p>На выходе получаем такую структуру</p>
                     <pre class="bg-slate-950 p-4 rounded-lg whitespace-pre-line">
                         hello/
                         - src/
@@ -189,16 +189,16 @@
                 </div>
 
                 <div class="flex flex-col gap-2">
-                    <h3 class="text-xl font-semibold">2. Building the project</h3>
-                    <p>Enter the project directory:</p>
+                    <h3 class="text-xl font-semibold">2. Сборка проекта</h3>
+                    <p>Заходим в папку проекта hello</p>
                     <pre class="bg-slate-950 p-4 rounded-lg whitespace-pre-line">
                         cd hello
                     </pre>
-                    <p>Build the project with the --release flag:</p>
+                    <p>Собираем проект с флагом --release</p>
                     <pre class="bg-slate-950 p-4 rounded-lg whitespace-pre-line">
                         dcr build --release
                     </pre>
-                    <p>The resulting structure will look like this:</p>
+                    <p>На выходе получаем такую структуру</p>
                     <pre class="bg-slate-950 p-4 rounded-lg whitespace-pre-line">
                         hello/
                         - src/
@@ -212,27 +212,27 @@
                 </div>
 
                 <div class="flex flex-col gap-2">
-                    <h3 class="text-xl font-semibold">3. Running the project</h3>
-                    <p>There are two ways to run the project:</p>
+                    <h3 class="text-xl font-semibold">3. Запуск проекта</h3>
+                    <p>Для запуска проекта можно использовать 2 способа</p>
 
                     <div class="flex flex-col gap-2">
-                        <h4 class="font-semibold">First method (recommended)</h4>
+                        <h4 class="font-semibold">Первый способ (рекомендуемый)</h4>
                         <pre class="bg-slate-950 p-4 rounded-lg whitespace-pre-line">
                             dcr run --release
                         </pre>
-                        <p>This command will build the project (if needed) and run it.</p>
+                        <p>Эта команда соберет проект, если он не был собран, и запустит его</p>
                     </div>
 
                     <div class="flex flex-col gap-2">
-                        <h4 class="font-semibold">Second method</h4>
+                        <h4 class="font-semibold">Второй способ</h4>
                         <pre class="bg-slate-950 p-4 rounded-lg whitespace-pre-line">
                             ./target/release/main
                         </pre>
-                        <p>This runs the binary directly.</p>
+                        <p>Так мы запустим проект напрямую</p>
                     </div>
                 </div>
 
-                <p>If you have questions about any of the steps, please refer to the documentation.</p>
+                <p>Если у вас есть вопрос по какому-то из шагов, посмотрите документацию</p>
             </div>
         </div>
     </main>

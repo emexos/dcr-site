@@ -1,0 +1,89 @@
+{
+  "site": {
+    "lang": "en",
+    "description": "DCR is a Cargo-style tool for C/C++ projects. Rust implementation, cross-platform support, and self-update via GitHub Releases."
+  },
+  "nav": {
+    "info": "Information",
+    "install": "Installation",
+    "commands": "Commands",
+    "example": "Examples"
+  },
+  "hero": {
+    "badge": "Open-Source Project",
+    "title": "DCR - Dexoron Cargo Realization",
+    "description": "DCR is a Cargo-style utility for C/C++ projects. The current implementation is written in Rust, supports Linux, macOS, and Windows, and uses a single configuration file: dcr.toml.",
+    "docs_button": "Documentation"
+  },
+  "info": {
+    "why": {
+      "title": "Why",
+      "point1": "Unified project structure",
+      "point2": "Simple management commands",
+      "point3": "Easy setup and usage"
+    },
+    "features": {
+      "title": "Features",
+      "point1": "Project creation / initialization",
+      "point2": "Build and run in debug/release profiles",
+      "point3": "Binary self-update via dcr --update"
+    },
+    "platforms": {
+      "title": "Platforms",
+      "point1": "Linux (x86_64)",
+      "point2": "macOS (Intel and Apple Silicon)",
+      "point3": "Windows (x86_64)"
+    }
+  },
+  "install": {
+    "title": "Installation",
+    "intro": "To install DCR, use your system terminal:",
+    "test_intro": "If the installation was successful, run the following command to test:"
+  },
+  "commands": {
+    "title": "Commands",
+    "intro": "Below are the basic commands. All available commands can be found in the documentation.",
+    "headers": {
+      "command": "Command",
+      "usage": "Usage",
+      "description": "Description"
+    },
+    "rows": {
+      "help": "Show help information",
+      "new": "Creates a project named hello in the current directory",
+      "init": "Creates a project in the current directory using the directory name",
+      "build": "Builds the project. If no profile is specified, --debug is used.",
+      "run": "Builds and runs the binary. If no profile is specified, --debug is used.",
+      "clean": "Removes a build profile from target. If no profile is specified, removes the entire folder.",
+      "update": "Updates DCR to the latest version from GitHub Releases."
+    }
+  },
+  "example": {
+    "title": "Example",
+    "intro": "This section shows an example of using DCR.",
+    "create": {
+      "title": "1. Creating a project",
+      "desc": "We will create a project named hello.",
+      "structure_label": "The resulting structure will look like this:"
+    },
+    "build": {
+      "title": "2. Building the project",
+      "desc": "Enter the project directory:",
+      "command_label": "Build the project with the --release flag:",
+      "structure_label": "The resulting structure will look like this:"
+    },
+    "run": {
+      "title": "3. Running the project",
+      "intro": "There are two ways to run the project:",
+      "first": {
+        "title": "First method (recommended)",
+        "desc": "This command will build the project (if needed) and run it."
+      },
+      "second": {
+        "title": "Second method",
+        "desc": "This runs the binary directly."
+      }
+    },
+    "outro": "If you have questions about any of the steps, please refer to the documentation."
+  }
+}
