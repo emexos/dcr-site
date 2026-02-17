@@ -85,6 +85,27 @@ const languageOptions = [
   { key: 'ru', label: 'Русский', href: '/ru/' },
 ];
 
+function normalizePath(pathname) {
+  return pathname.endsWith('/') ? pathname : `${pathname}/`;
+}
+
+function mapDocsPathToLanguage(pathname, targetLanguage) {
+  const normalizedPath = normalizePath(pathname);
+  const enDocsPrefix = '/docs/';
+  const ruDocsPrefix = '/ru/docs/';
+
+  if (!normalizedPath.startsWith(enDocsPrefix) && !normalizedPath.startsWith(ruDocsPrefix)) {
+    return null;
+  }
+
+  const suffix = normalizedPath.startsWith(ruDocsPrefix)
+    ? normalizedPath.slice(ruDocsPrefix.length)
+    : normalizedPath.slice(enDocsPrefix.length);
+
+  const targetPrefix = targetLanguage === 'ru' ? ruDocsPrefix : enDocsPrefix;
+  return `${targetPrefix}${suffix}`;
+}
+
 function detectCurrentLanguage() {
   const path = window.location.pathname;
   const normalizedPath = path.endsWith('/') ? path : `${path}/`;
@@ -156,7 +177,9 @@ function createLanguageSwitcher() {
     optionButton.addEventListener('click', () => {
       if (item.disabled || !item.href) return;
 
-      const target = new URL(item.href, window.location.origin);
+      const mappedDocsPath = mapDocsPathToLanguage(window.location.pathname, item.key);
+      const targetPath = mappedDocsPath || item.href;
+      const target = new URL(targetPath, window.location.origin);
       target.search = window.location.search;
       target.hash = window.location.hash;
 

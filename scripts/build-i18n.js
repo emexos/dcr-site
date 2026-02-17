@@ -34,18 +34,24 @@ function ensureDir(dirPath) {
 
 function main() {
   const template = fs.readFileSync(templatePath, 'utf8');
-  const localeFiles = fs
+  const localeDirs = fs
     .readdirSync(localesDir)
-    .filter((file) => file.endsWith('.json'))
+    .filter((entry) => {
+      const fullPath = path.join(localesDir, entry);
+      return fs.statSync(fullPath).isDirectory();
+    })
     .sort();
 
-  if (localeFiles.length === 0) {
-    throw new Error('No locale files found in locales/.');
+  if (localeDirs.length === 0) {
+    throw new Error('No locale directories found in locales/.');
   }
 
-  for (const file of localeFiles) {
-    const localeCode = path.basename(file, '.json');
-    const localePath = path.join(localesDir, file);
+  for (const localeCode of localeDirs) {
+    const localePath = path.join(localesDir, localeCode, 'index.json');
+    if (!fs.existsSync(localePath)) {
+      throw new Error(`Missing locale file: locales/${localeCode}/index.json`);
+    }
+
     const localeData = JSON.parse(fs.readFileSync(localePath, 'utf8'));
     const html = renderTemplate(template, localeData, localeCode);
 
@@ -63,7 +69,7 @@ function main() {
     }
   }
 
-  console.log(`Built ${localeFiles.length} locale(s). Default locale: ${defaultLocale}`);
+  console.log(`Built ${localeDirs.length} locale(s). Default locale: ${defaultLocale}`);
 }
 
 main();
